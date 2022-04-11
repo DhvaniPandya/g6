@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: dhvani
+spec:
+  replicas: 1
+  revisionHistoryLimit: 3
+  selector:
+    matchLabels:
+      app: dhvani
+  template:
+    metadata:
+      labels:
+        app: dhvani
+    spec:
+      containers:
+      - name: dhvani
+        image: dnp1194/firstimage:latest
+        ports:
+        - containerPort: 8080
